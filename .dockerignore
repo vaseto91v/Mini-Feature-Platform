@@ -1,0 +1,26 @@
+# Never ship host-installed deps or build artifacts into the image context.
+# Dependencies are installed fresh inside the (Linux) image so native modules
+# like @node-rs/argon2 get the correct platform binary.
+**/node_modules
+**/dist
+**/.output
+**/.nuxt
+**/.nitro
+**/.cache
+infra/cdk.out
+**/cdk.out
+
+# VCS / local env / editor
+.git
+.gitignore
+**/.env
+**/.env.*
+!**/.env.example
+**/*.log
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+
+# Docs not needed at build time
+docs

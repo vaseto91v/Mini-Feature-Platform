@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Geist", "Geist Fallback", system-ui, sans-serif;
+  }
+  body {
+    @apply bg-neutral-100 text-neutral-950 antialiased dark:bg-surface-dark dark:text-surface-dark-text;
+    /* App-chrome defaults: arrow cursor + non-selectable text, so labels,
+       headings and descriptions don't show a text I-beam or get selected
+       (which made them look editable). Inputs and interactive elements opt
+       back in below. Tailwind cursor and select utilities still win - they
+       sit in the later utilities layer. */
+    cursor: default;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+  input,
+  textarea {
+    cursor: text;
+    -webkit-user-select: text;
+    user-select: text;
+  }
+  a[href],
+  button,
+  select,
+  label[for],
+  summary,
+  [role="button"] {
+    cursor: pointer;
+  }
+}
+
+/* Thin, unobtrusive scrollbars for board columns / panels. */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.neutral.300") transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: theme("colors.neutral.300");
+    border-radius: 9999px;
+  }
+}

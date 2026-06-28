@@ -1,0 +1,31 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.output/
+.nuxt/
+.nitro/
+.cache/
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test / coverage
+coverage/
+
+# CDK
+infra/cdk.out/
+cdk.out/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+*.swp

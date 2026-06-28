@@ -1,0 +1,115 @@
+import type { Config } from "tailwindcss";
+
+// Mini Feature Platform - design tokens.
+// Cool-gray neutrals, trustworthy-blue primary, 7-color semantic palette.
+export default {
+  darkMode: "class",
+  content: [
+    "./components/**/*.{vue,js,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./composables/**/*.ts",
+    "./stores/**/*.ts",
+    "./utils/**/*.ts",
+    "./app.vue",
+    "./error.vue",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        neutral: {
+          50: "#f7f8fa",
+          100: "#eef1f4",
+          200: "#e3e6ea",
+          300: "#cdd3da",
+          400: "#98a2b3",
+          500: "#6b7685",
+          600: "#5f6b7a",
+          700: "#4a5360",
+          800: "#333a44",
+          900: "#23272e",
+          950: "#1f2329",
+        },
+        primary: {
+          50: "#e8f0fe",
+          200: "#9bbcf7",
+          500: "#2f6feb",
+          600: "#1f5fe0",
+          800: "#15439c",
+          DEFAULT: "#2f6feb",
+        },
+        status: {
+          todo: "#6b7685",
+          "todo-bg": "#eef1f4",
+          progress: "#d98b15",
+          "progress-bg": "#fdf4e3",
+          "progress-fg": "#b45309",
+          done: "#15a05a",
+          "done-bg": "#e7f6ee",
+          "done-fg": "#047d45",
+        },
+        accent: {
+          green: "#15a05a",
+          "green-soft": "#e7f6ee",
+          red: "#e5484d",
+          "red-soft": "#fdeaea",
+          blue: "#2f6feb",
+          "blue-soft": "#e8f0fe",
+          purple: "#8250df",
+          "purple-soft": "#f3edfc",
+          amber: "#d98b15",
+          "amber-soft": "#fdf4e3",
+          teal: "#0d9488",
+          "teal-soft": "#e6f6f4",
+          gray: "#6b7685",
+          "gray-soft": "#eef1f4",
+        },
+        surface: {
+          dark: "#0e1116",
+          "dark-2": "#161a21",
+          "dark-3": "#1c222b",
+          "dark-border": "#262d38",
+          "dark-text": "#e6e9ee",
+          "dark-muted": "#8b95a3",
+          "dark-faint": "#5f6b7a",
+        },
+      },
+      fontFamily: {
+        sans: ["Geist", "Geist Fallback", "system-ui", "sans-serif"],
+        mono: ["Geist Mono", "ui-monospace", "monospace"],
+      },
+      fontSize: {
+        caption: ["12px", "16px"],
+        body: ["14px", "20px"],
+        heading: ["18px", "24px"],
+        title: ["20px", "26px"],
+        display: ["26px", "32px"],
+      },
+      borderRadius: {
+        sm: "5px",
+        DEFAULT: "7px",
+        md: "8px",
+        lg: "10px",
+        xl: "12px",
+      },
+      boxShadow: {
+        card: "0 1px 2px rgba(31,35,41,0.04)",
+        panel: "0 4px 16px rgba(31,35,41,0.05)",
+        pop: "0 6px 22px rgba(31,35,41,0.07)",
+        drag: "0 16px 30px rgba(47,111,235,0.24)",
+        modal: "0 24px 60px rgba(0,0,0,0.30)",
+      },
+      spacing: {
+        lane: "148px",
+        rail: "192px",
+      },
+      keyframes: {
+        pulse: { "0%,100%": { opacity: "1" }, "50%": { opacity: "0.45" } },
+      },
+      animation: {
+        skeleton: "pulse 1.4s ease-in-out infinite",
+      },
+    },
+  },
+  plugins: [],
+} satisfies Config;
